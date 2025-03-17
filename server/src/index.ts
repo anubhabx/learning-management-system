@@ -42,6 +42,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(clerkMiddleware());
 
+// Test Route
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 // Routes
 app.use("/api/courses", courseRoutes);
 app.use("/api/users/clerk", requireAuth(), userClerkRoutes);

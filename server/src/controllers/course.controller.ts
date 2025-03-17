@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Course from "../models/course.model.ts";
+import Course from "../models/course.model";
 import { getAuth } from "@clerk/express";
 import { v4 as uuidv4 } from "uuid";
 import mongoose from "mongoose";

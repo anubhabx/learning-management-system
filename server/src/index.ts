@@ -13,10 +13,10 @@ import {
 } from "@clerk/express";
 
 // Route imports
-import courseRoutes from "./routes/course.routes.ts";
-import userClerkRoutes from "./routes/userClerk.routes.ts";
-import transactionRoutes from "./routes/transaction.routes.ts";
-import userCourseProgressRoutes from "./routes/user.course.progress.routes.ts";
+import courseRoutes from "./routes/course.routes";
+import userClerkRoutes from "./routes/userClerk.routes";
+import transactionRoutes from "./routes/transaction.routes";
+import userCourseProgressRoutes from "./routes/user.course.progress.routes";
 
 // Configurations
 dotenv.config();

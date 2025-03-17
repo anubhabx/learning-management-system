@@ -6,7 +6,7 @@ import {
   deleteCourse,
   updateCourse,
   getUploadVideoUrl,
-} from "../controllers/course.controller.ts";
+} from "../controllers/course.controller";
 import { requireAuth } from "@clerk/express";
 import multer from "multer";
 

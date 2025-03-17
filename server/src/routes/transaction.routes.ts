@@ -3,7 +3,7 @@ import {
   createStripePaymentIntent,
   createTransaction,
   listTransactions,
-} from "../controllers/transaction.controller.ts";
+} from "../controllers/transaction.controller";
 
 const router = express.Router();
 

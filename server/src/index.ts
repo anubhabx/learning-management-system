@@ -65,7 +65,23 @@ if (!isProduction) {
 // AWS production settings
 const serverlessApp = serverless(app);
 
+// Database connection for serverless environment
+let isConnected = false;
+
 export const handler = async (event: any, context: any) => {
+  // Set this to false to prevent Lambda from waiting for empty event loop
   context.callbackWaitsForEmptyEventLoop = false;
+  
+  // Connect to database if not already connected
+  if (isProduction && !isConnected) {
+    try {
+      await connectToDatabase(MONGODB_URI!);
+      isConnected = true;
+      // console.log("Connected to database in serverless environment");
+    } catch (error) {
+      console.error("Failed to connect to database:", error);
+    }
+  }
+  
   return serverlessApp(event, context);
 };

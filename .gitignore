@@ -1,0 +1,66 @@
+# Dependencies
+/client/node_modules
+/server/node_modules
+node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js
+/client/.next/
+/client/out/
+
+# Production
+/client/build
+/client/dist
+/server/dist
+/server/build
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+/client/.env
+/server/.env
+.env
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE specific files
+.idea
+.vscode
+*.swp
+*.swo
+
+# Package manager lock files (uncomment based on your preference)
+# package-lock.json
+# yarn.lock
+# /client/package-lock.json
+# /server/package-lock.json
+
+# Logs
+logs
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

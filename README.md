@@ -301,11 +301,11 @@ AWS services power content storage and processing:
 
 ### Client
 
-The frontend can be easily deployed on Vercel, the platform from the creators of Next.js.
+The frontend is deployed on Vercel. [Visit](https://learning-management-system-one-theta.vercel.app/)
 
 ### Server
 
-The backend can be deployed on platforms like Railway, Render, or Heroku.
+The backend is deployed using Docker, AWS Lambda, AWS ECR, and AWS cloudfront.
 
 ---
 

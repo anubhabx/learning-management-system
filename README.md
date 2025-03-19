@@ -202,9 +202,9 @@ flowchart TD
    | ----------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
    | `NEXT_PUBLIC_API_BASE_URL`          | http://localhost:8001/api                                                                                   | Base URL for API endpoints                  |
    | `NEXT_PUBLIC_LOCAL_URL`             | localhost:3000                                                                                              | Base URL for client application             |
-   | `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | pk_test_YXdha2UtZG9nZmlzaC00NS5jbGVyay5hY2NvdW50cy5kZXYk                                                    | Clerk public key for authentication         |
-   | `CLERK_SECRET_KEY`                  | sk_test_whIY1CwV3H1ra1i6EEIr6yvgimF7piXucKaLYzw6Em                                                          | Clerk secret key for server-side operations |
-   | `NEXT_PUBLIC_STRIPE_PUBLIC_KEY`     | pk_test_51QwM34SCLsClVOtM8FCLlbX3T6NAvBLaMgXXJ8lioaYdKRD9kqWx54U2y1NOS6ueOXoVA4ZsAZnZvA495iGEtx5k00huWiALT8 | Stripe publishable key for payments         |
+   | `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | your_clerk_publishable_key                                                    | Clerk public key for authentication         |
+   | `CLERK_SECRET_KEY`                  | your_clerk_secret_key                                                          | Clerk secret key for server-side operations |
+   | `NEXT_PUBLIC_STRIPE_PUBLIC_KEY`     | your_stripe_public_key | Stripe publishable key for payments         |
    | `NEXT_PUBLIC_STRIPE_REDIRECT_URL`   | http://localhost:3000/checkout?step=3                                                                       | Redirect URL after successful payment       |
 
    </details>
@@ -216,13 +216,13 @@ flowchart TD
    | ----------------------- | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------- |
    | `PORT`                  | 8001                                                                                                                     | Server port number                       |
    | `NODE_ENV`              | development                                                                                                              | Environment mode                         |
-   | `MONGODB_URI`           | mongodb+srv://anubhabdebnath98:vYUgYhfHlWKf64HO@cluster0.614zs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0 | MongoDB database connection URL          |
-   | `CLERK_PUBLISHABLE_KEY` | pk_test_YXdha2UtZG9nZmlzaC00NS5jbGVyay5hY2NvdW50cy5kZXYk                                                                 | Clerk public key for authentication      |
-   | `CLERK_SECRET_KEY`      | sk_test_whIY1CwV3H1ra1i6EEIr6yvgimF7piXucKaLYzw6Em                                                                       | Clerk secret key for server operations   |
-   | `STRIPE_SECRET_KEY`     | sk_test_51QwM34SCLsClVOtMdxjHHKY9Kh4YhFp6M5ebWwspeFcFe9ZKLOXvMxGOpdb7TEY0KgsBVDpmxNNBLcblp0d8LMPs00J4BYvUe2              | Stripe secret key for payment processing |
+   | `MONGODB_URI`           | your_mongodb_connection_string | MongoDB database connection URL          |
+   | `CLERK_PUBLISHABLE_KEY` | your_clerk_publishable_key                                                                 | Clerk public key for authentication      |
+   | `CLERK_SECRET_KEY`      | your_clerk_secret_key                                                                       | Clerk secret key for server operations   |
+   | `STRIPE_SECRET_KEY`     | your_stripe_secret_key              | Stripe secret key for payment processing |
    | `AWS_Region`            | us-east-1                                                                                                                | AWS region for services                  |
-   | `S3_BUCKET_NAME`        | lms.s3.bucket                                                                                                            | Name of S3 bucket for content storage    |
-   | `CLOUDFRONT_DOMAIN`     | https://d1e0dtlrs6dap5.cloudfront.net                                                                                    | CloudFront domain for content delivery   |
+   | `S3_BUCKET_NAME`        | your_bucket_name                                                                                                            | Name of S3 bucket for content storage    |
+   | `CLOUDFRONT_DOMAIN`     | your_cloudfront_domain                                                                                    | CloudFront domain for content delivery   |
 
    </details>
 

@@ -1571,6 +1571,51 @@ input[type="color"] {
   @apply w-full py-3 bg-primary-700 hover:bg-primary-600 text-white-100 rounded-lg mt-6;
 }
 
+/* Error Page */
+.error-page {
+  @apply flex flex-col items-center justify-center min-h-screen bg-customgreys-primarybg text-white-50;
+}
+
+.error-page__container {
+  @apply w-full max-w-lg px-6 py-12 text-center;
+}
+
+.error-page__content {
+  @apply flex flex-col items-center;
+}
+
+.error-page__status {
+  @apply text-7xl sm:text-9xl font-bold mb-4 bg-gradient-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent;
+}
+
+.error-page__title {
+  @apply text-2xl sm:text-3xl font-bold mb-3;
+}
+
+.error-page__description {
+  @apply text-sm sm:text-base text-customgreys-dirtyGrey mb-8;
+}
+
+.error-page__illustration {
+  @apply my-8 text-primary-700;
+}
+
+.error-page__svg {
+  @apply w-48 h-48 sm:w-64 sm:h-64 mx-auto;
+}
+
+.error-page__actions {
+  @apply flex flex-col sm:flex-row gap-4 mt-8;
+}
+
+.error-page__button--back {
+  @apply border-customgreys-dirtyGrey text-white-50 hover:bg-customgreys-secondarybg;
+}
+
+.error-page__button--home {
+  @apply bg-primary-700 hover:bg-primary-600 text-white-50;
+}
+
 @layer base {
   * {
     @apply border-border;

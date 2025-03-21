@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 "use client";
 
 import ErrorPage from "@/components/shared/ErrorPage";
@@ -15,9 +17,9 @@ export default function Error({
     <div className="nondashboard-layout">
       <NonDashboardNavbar />
       <main className="nondashboard-layout__main">
-        <ErrorPage 
+        <ErrorPage
           statusCode={500}
-          title="Something went wrong!" 
+          title="Something went wrong!"
           description="We apologize for the inconvenience. Please try refreshing the page or contact support if the issue persists."
           showBackButton={false}
           showHomeButton={true}

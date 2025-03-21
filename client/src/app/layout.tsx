@@ -5,6 +5,8 @@ import Providers from "./providers";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
 import { Suspense } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -75,7 +77,11 @@ export default function RootLayout({
         <body className={`${dmSans.className}`}>
           <Providers>
             <Suspense fallback={null}>
-              <div className="root-layout">{children}</div>
+              <div className="root-layout">
+                {children}
+                <SpeedInsights />
+                <Analytics />
+              </div>
             </Suspense>
             <Toaster richColors closeButton />
           </Providers>

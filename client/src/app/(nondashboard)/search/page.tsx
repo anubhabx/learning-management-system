@@ -15,6 +15,9 @@ const Search = () => {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const router = useRouter();
 
+  const publishedCourses =
+    courses?.filter((course) => course.status === "Published") || courses;
+
   useEffect(() => {
     if (courses) {
       if (id) {
@@ -60,7 +63,7 @@ const Search = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="search__courses-grid"
         >
-          {courses.map((course) => (
+          {publishedCourses?.map((course) => (
             <CourseCardSearch
               key={course._id}
               isSelected={selectedCourse?._id === course._id}

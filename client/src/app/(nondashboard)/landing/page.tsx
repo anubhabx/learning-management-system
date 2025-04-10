@@ -46,6 +46,9 @@ const Landing = () => {
   const currentImage = useCarousel({ totalImages: 3 });
   const { data: courses, isLoading, isError } = useGetCoursesQuery({});
 
+  const publisedCourses =
+    courses?.filter((course) => course.status === "Published") || courses;
+
   const handleCourseClick = (courseId: string) => {
     router.push(`/search?id=${courseId}`, {
       scroll: false,
@@ -141,7 +144,7 @@ const Landing = () => {
 
         <div className="landing__courses">
           {courses &&
-            courses.slice(0, 4).map((course, index) => (
+            publisedCourses?.slice(0, 4).map((course, index) => (
               <motion.div
                 key={course._id}
                 initial={{ y: 50, opacity: 0 }}

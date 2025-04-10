@@ -364,7 +364,7 @@ export const uploadAllVideos = async (
 async function uploadVideo(
   chapter: Chapter,
   courseId: string,
-  _id: string,
+  sectionId: string,
   getUploadVideoUrl: any
 ) {
   const file = chapter.video as File;
@@ -372,39 +372,52 @@ async function uploadVideo(
   // Check if file is valid before proceeding
   if (!file || !(file instanceof File)) {
     console.log("No valid file provided for upload");
-    return { ...chapter, video: "" }; // Return empty string instead of empty object
+    return { ...chapter, video: "" };
   }
 
   try {
+    console.log("Getting upload URL with params:", {
+      courseId,
+      sectionId,
+      chapterId: chapter._id,
+      fileName: file.name,
+      fileType: file.type,
+    });
+    
     const { uploadUrl, videoUrl } = await getUploadVideoUrl({
       courseId,
-      _id: chapter._id,
+      sectionId,
+      chapterId: chapter._id,
       fileName: file.name,
       fileType: file.type,
     }).unwrap();
-
-    await fetch(uploadUrl, {
+    
+    console.log("Received pre-signed URL:", uploadUrl);
+    
+    const uploadResponse = await fetch(uploadUrl, {
       method: "PUT",
       headers: {
         "Content-Type": file.type,
       },
       body: file,
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to upload video");
-        }
-      })
-      .catch((error) => {
-        console.error("Error uploading video:", error);
-        return;
+    });
+    
+    if (!uploadResponse.ok) {
+      const errorText = await uploadResponse.text();
+      console.error("Upload failed details:", {
+        status: uploadResponse.status,
+        statusText: uploadResponse.statusText,
+        url: uploadResponse.url,
+        errorBody: errorText || "No error body",
+        headers: Object.fromEntries(uploadResponse.headers.entries())
       });
-
-    toast.success(`Video uploaded successfully for chapter ${chapter._id}`);
-
+      throw new Error(`Upload failed: ${uploadResponse.status} ${uploadResponse.statusText}`);
+    }
+    
+    console.log(`Video uploaded successfully for chapter ${chapter._id}`);
     return { ...chapter, video: videoUrl };
   } catch (error) {
     console.error(`Failed to upload video for chapter ${chapter._id}:`, error);
-    return { ...chapter, video: "" }; // Return empty string on error
+    return { ...chapter, video: "" };
   }
 }

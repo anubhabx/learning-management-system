@@ -18,12 +18,13 @@ const NonDashboardNavbar = () => {
       <div className="nondashboard-navbar__container">
         <div className="nondashboard-navbar__search">
           <Link scroll={false} href="/" className="nondashboard-navbar__brand">
-            EDROH
+            NextLearn
           </Link>
 
           <div className="flex items-center gap-4">
             <div className="relative group">
-              <Link scroll={false}
+              <Link
+                scroll={false}
                 href="/search"
                 className="nondashboard-navbar__search-input"
               >
@@ -60,13 +61,15 @@ const NonDashboardNavbar = () => {
           </SignedIn>
 
           <SignedOut>
-            <Link scroll={false}
+            <Link
+              scroll={false}
               href={"/sign-in"}
               className="nondashboard-navbar__auth-button--login"
             >
               Sign In
             </Link>
-            <Link scroll={false}
+            <Link
+              scroll={false}
               href={"/sign-up"}
               className="nondashboard-navbar__auth-button--signup"
             >

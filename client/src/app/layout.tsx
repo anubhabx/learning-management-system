@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     "Empower your learning journey with our premium online courses. Access expert-led tutorials, interactive lessons, and certification programs.",
   keywords:
     "LMS, online courses, e-learning, education platform, professional development, certification, skills training",
-  authors: [{ name: "Your Company Name" }],
-  creator: "Your Company Name",
-  publisher: "Your Company Name",
+  authors: [{ name: "NextLearn" }],
+  creator: "NextLearn",
+  publisher: "NextLearn",
   formatDetection: {
     email: false,
     telephone: false,

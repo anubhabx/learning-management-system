@@ -82,7 +82,7 @@ const AppSidebar = () => {
                     height={20}
                     className="app-sidebar__logo"
                   />
-                  <p className="app-sidebar__title">EDROH</p>
+                  <p className="app-sidebar__title">NextLearn</p>
                 </div>
                 <PanelLeft className="app-sidebar__collapse-icon" />
               </div>
@@ -111,7 +111,11 @@ const AppSidebar = () => {
                     isActive && "text-customgreys-dirtyGrey"
                   )}
                 >
-                  <Link scroll={false} href={link.href} className="app-sidebar__nav-link">
+                  <Link
+                    scroll={false}
+                    href={link.href}
+                    className="app-sidebar__nav-link"
+                  >
                     <link.icon
                       className={isActive ? "text-white-50" : "text-gray-500"}
                     ></link.icon>

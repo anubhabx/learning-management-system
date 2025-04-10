@@ -5,7 +5,13 @@ import { v4 as uuidv4 } from "uuid";
 import mongoose from "mongoose";
 import AWS from "aws-sdk";
 
-const s3 = new AWS.S3();
+const s3 = new AWS.S3({
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || "",
+  },
+  region: process.env.AWS_REGION || "ap-south-1",
+});
 
 export const listCourses = async (
   req: Request,
@@ -143,6 +149,13 @@ export const updateCourse = async (req: Request, res: Response) => {
         ...section,
         chapters: section.chapters.map((chapter: any) => ({
           ...chapter,
+          // Convert empty objects to null or empty strings
+          video:
+            chapter.video &&
+            typeof chapter.video === "object" &&
+            Object.keys(chapter.video).length === 0
+              ? ""
+              : chapter.video,
         })),
       }));
     }

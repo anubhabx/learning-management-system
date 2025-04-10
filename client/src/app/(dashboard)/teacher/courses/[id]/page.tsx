@@ -73,6 +73,8 @@ const CourseEditor = () => {
         getUploadVideoUrl
       );
 
+      console.log("Updated sections:", upatedSections);
+
       const formData = createCourseFormData(data, upatedSections);
 
       //   console.log(formData);

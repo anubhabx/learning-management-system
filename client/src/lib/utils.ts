@@ -369,6 +369,12 @@ async function uploadVideo(
 ) {
   const file = chapter.video as File;
 
+  // Check if file is valid before proceeding
+  if (!file || !(file instanceof File)) {
+    console.log("No valid file provided for upload");
+    return { ...chapter, video: "" }; // Return empty string instead of empty object
+  }
+
   try {
     const { uploadUrl, videoUrl } = await getUploadVideoUrl({
       courseId,
@@ -383,12 +389,22 @@ async function uploadVideo(
         "Content-Type": file.type,
       },
       body: file,
-    });
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to upload video");
+        }
+      })
+      .catch((error) => {
+        console.error("Error uploading video:", error);
+        return;
+      });
+
     toast.success(`Video uploaded successfully for chapter ${chapter._id}`);
 
     return { ...chapter, video: videoUrl };
   } catch (error) {
     console.error(`Failed to upload video for chapter ${chapter._id}:`, error);
-    throw error;
+    return { ...chapter, video: "" }; // Return empty string on error
   }
 }

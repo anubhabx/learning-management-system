@@ -215,7 +215,7 @@ export const getUploadVideoUrl = async (
     const s3Key = `videos/${uniqueId}/${fileName}`;
 
     const s3Params = {
-      Bucket: process.env.S3_BUCKET_NAME || "",
+      Bucket: process.env.AWS_BUCKET_NAME || "",
       Key: s3Key,
       Expires: 60,
       ContentType: fileType,
